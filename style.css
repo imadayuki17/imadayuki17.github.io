@@ -21,6 +21,7 @@ body {
 	margin: 0;
 	width: 100%;
 	height: 100%;
+	color: #333333;
 }
 
 /* =========================
@@ -30,16 +31,17 @@ body {
 .container {
 	display: grid; /* 要素をグリッドコンテナにする */
 
-	grid-template-columns: 300px minmax(0, 1fr) 240px;
+	grid-template-columns: 300px minmax(0, 1fr) 260px;
 	/* 列幅の指定
 	1列目:固定幅 300px
 	2列目:最小0pxから最大で残りの幅いっぱい (1fr)
-	3列目:固定幅 240px
+	3列目:固定幅 260px
 	*/
 
 	width: 100%;
 	height: 100vh; /* ビューポートの高さ100% */
-	overflow: hidden; /* コンテンツがはみ出してもスクロールバーを出さずに隠す */
+	background-image: url(../img/white_00101.jpg);
+	background-size: cover;
 }
 
 /* ==========================
@@ -48,7 +50,16 @@ body {
 
 .left-column {
 	height: 100%;
-	background: #FFFFE0;
+	padding: 20px;
+}
+.myname-jpn {
+	font-size: 36px;
+	font-weight: 500;
+	margin: 0;
+}
+
+.myname-eng {
+	margin-top: 0;
 }
 
 /* ==========================
@@ -62,6 +73,16 @@ body {
 	
 	/* スクロールバーを非表示にする */
 	scrollbar-width: none; /* Firefox */
+	padding: 20px;
+}
+
+.content-section {
+	width: 100%;
+	padding: 20px;
+	border-radius:20px 20px 20px 20px;
+	background-color: #FFFFFF;
+	box-shadow: 0 0 8px #D3D3D3;
+	margin: 0 0 40px 0;
 }
 
 .center-column::-webkit-scrollbar {
@@ -74,5 +95,23 @@ body {
 
 .right-column {
 	height: 100%;
-	background: #F5F5DC;
+	padding: 20px;
+}
+
+/* サイトタイトル：英字フォント */
+.site-title,
+.site-subtitle {
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+.site-title {
+	font-size: 32px;
+	font-weight: normal;
+	margin: 0 0 6px 0;
+}
+
+.site-subtitle {
+	font-size: 16px;
+	margin: 0;
+
 }
