@@ -24,13 +24,6 @@ body {
 }
 
 /* =========================
-   クラス指定
-========================= */
-
-
-
-
-/* =========================
    3カラム全体
 ========================= */
 
@@ -66,6 +59,13 @@ body {
 	height: 100%;
 	overflow-y: auto;
 	overscroll-behavior-y: contain;
+	
+	/* スクロールバーを非表示にする */
+	scrollbar-width: none; /* Firefox */
+}
+
+.center-column::-webkit-scrollbar {
+	display: none; /* Chrome・Edge・Safari */
 }
 
 /* ==========================
