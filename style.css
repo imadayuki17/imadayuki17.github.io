@@ -1,0 +1,78 @@
+/* =========================
+   タグに指定
+========================= */
+
+html {
+	scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+a {
+	cursor: pointer;
+}
+
+html,
+body {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* =========================
+   クラス指定
+========================= */
+
+
+
+
+/* =========================
+   3カラム全体
+========================= */
+
+.container {
+	display: grid; /* 要素をグリッドコンテナにする */
+
+	grid-template-columns: 300px minmax(0, 1fr) 240px;
+	/* 列幅の指定
+	1列目:固定幅 300px
+	2列目:最小0pxから最大で残りの幅いっぱい (1fr)
+	3列目:固定幅 240px
+	*/
+
+	width: 100%;
+	height: 100vh; /* ビューポートの高さ100% */
+	overflow: hidden; /* コンテンツがはみ出してもスクロールバーを出さずに隠す */
+}
+
+/* ==========================
+   左カラム
+========================== */
+
+.left-column {
+	height: 100%;
+	background: #FFFFE0;
+}
+
+/* ==========================
+   中央カラム
+========================== */
+
+.center-column {
+	height: 100%;
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+}
+
+/* ==========================
+   右カラム
+========================== */
+
+.right-column {
+	height: 100%;
+	background: #F5F5DC;
+}
