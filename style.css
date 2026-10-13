@@ -82,11 +82,11 @@ body {
 }
 
 .profile-item {
-	margin-bottom: 12px;
+	margin-bottom: 14px;
 }
 
 .profile-label {
-	margin: 0;
+	margin: 0 0 3px 0;
 	color: #999999;
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 11px;
@@ -176,7 +176,7 @@ body {
 }
 
 .site-title {
-	font-size: 34px;
+	font-size: 36px;
 	font-weight: normal;
 	margin: 0 0 6px 0;
 }
@@ -184,7 +184,7 @@ body {
 .site-subtitle {
 	font-size: 16px;
 	margin: 0;
-
+	letter-spacing: 0.04em;
 }
 
 .navi ul {
@@ -210,10 +210,10 @@ body {
 	content: '';
 	position: absolute;
 	width: 0;
-	height: 3px;
+	height: 2px;
 	bottom: 3px;
 	left: 50%;
-	background: #00FF00;
+	background: #E89A8A;
 	transition: all 0.3s ease;
 }
 
