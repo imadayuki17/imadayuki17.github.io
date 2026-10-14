@@ -30,6 +30,19 @@ hr {
 	background-color: #DDDDDD;
 }
 
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.margin-bottom10 {
+	margin-bottom: 10px;
+}
+
 /* =========================
    3カラム全体
 ========================= */
@@ -178,7 +191,11 @@ hr {
 
 .section-text p {
 	font-size: 15px;
-	margin: 0 0 24px 0;
+	margin: 0 0 10px 0;
+}
+
+.section-text ul li {
+	font-size: 15px;
 }
 
 .sub-content {
@@ -192,6 +209,61 @@ hr {
 	margin: 20px 0 6px 0;
 	padding-left: 10px;
 	border-left: 3px solid #B5C98E;
+}
+
+.gallery {
+	display: flex;
+	gap: 10px;
+}
+
+.gallery-image {
+	width: calc((100% - 30px) / 4);
+}
+
+.gallery-image img {
+	display: block;
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+}
+
+
+/* 画像の拡大表示用 */
+.lightbox {
+	display: none;
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.85);
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+}
+
+/* 表示するとき */
+.lightbox.active {
+	display: flex;
+}
+
+/* 拡大画像 */
+.lightbox img {
+	max-width: 90%;
+	max-height: 85vh;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+/* 閉じるボタン */
+.lightbox-close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 40px;
+	cursor: pointer;
 }
 
 /* ==========================
@@ -237,7 +309,6 @@ hr {
 }
 
 .navi a {
-	text-decoration: none;
 	color: inherit; 
 }
 
