@@ -59,7 +59,7 @@ a {
 
 	width: 100%;
 	height: 100vh; /* ビューポートの高さ100% */
-	background-image: url(../img/white_00101.jpg);
+	background-image: url(./img/white_00101.jpg);
 	background-size: cover;
 }
 
@@ -87,6 +87,7 @@ a {
 	font-size: 32px;
 	font-weight: 500;
 	margin: 0 0 6px 0;
+	letter-spacing: 0.06em;
 }
 
 .myname-eng {
@@ -227,22 +228,28 @@ a {
 	cursor: pointer;
 }
 
-
 /* 画像の拡大表示用 */
 .lightbox {
-	display: none;
+	display: flex;
 	position: fixed;
 	inset: 0;
 	z-index: 9999;
-	background: rgba(0, 0, 0, 0.85);
+	background: rgba(0, 0, 0, 0);
 	justify-content: center;
 	align-items: center;
 	padding: 40px;
+
+	/* 最初は非表示 */
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.35s ease, background 0.35s ease;
 }
 
 /* 表示するとき */
 .lightbox.active {
-	display: flex;
+	visibility: visible;
+	opacity: 1;
+	background: rgba(0, 0, 0, 0.85);
 }
 
 /* 拡大画像 */
@@ -252,6 +259,15 @@ a {
 	width: auto;
 	height: auto;
 	object-fit: contain;
+
+	/* 表示前の状態 */
+	transform: scale(0.75);
+	transition: transform 0.35s ease;
+}
+
+/* ふわっと拡大 */
+.lightbox.active img {
+	transform: scale(1);
 }
 
 /* 閉じるボタン */
@@ -265,6 +281,76 @@ a {
 	font-size: 40px;
 	cursor: pointer;
 }
+
+.skill-note {
+	
+}
+
+/* ===== スキル一覧テーブル ===== */
+.skill-note {
+	font-size: 14px;
+	width: 100%;
+	margin: 16px 0 28px;
+	border-collapse: separate;
+	border-spacing: 0;
+	table-layout: fixed;
+	background-color: #ffffff;
+	border: 1px solid #e4e8df;
+	border-radius: 8px;
+	overflow: hidden;
+	line-height: 1.7;
+}
+
+/* ヘッダー */
+.skill-note thead th {
+	padding: 12px 14px;
+	background-color: #e8eedf;
+	font-weight: 700;
+	text-align: left;
+	border-bottom: 2px solid #d5dfc8;
+}
+
+/* セル共通 */
+.skill-note tbody td {
+	padding: 10px 14px;
+	border-bottom: 1px solid #edf0e9;
+	vertical-align: middle;
+	overflow-wrap: anywhere;
+}
+
+/* 最後の行の下線 */
+.skill-note tbody tr:last-child td {
+	border-bottom: none;
+}
+
+/* 1列目：スキル名 */
+.skill-note tbody td:first-child {
+	font-weight: 600;
+}
+
+/* 2列目：自己評価 */
+.skill-note thead th:nth-child(2),
+.skill-note tbody td:nth-child(2) {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.skill-note tbody td:nth-child(2) {
+	color: #c18b3c;
+	letter-spacing: 2px;
+	font-size: 16px;
+}
+
+/* 偶数行をほんのり色分け */
+.skill-note tbody tr:nth-child(even) {
+	background-color: #fafbf8;
+}
+
+/* マウスを乗せた行 */
+.skill-note tbody tr:hover {
+	background-color: #f1f5eb;
+}
+
 
 /* ==========================
    右カラム
