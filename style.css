@@ -331,7 +331,6 @@ a {
 /* 2列目：自己評価 */
 .skill-note thead th:nth-child(2),
 .skill-note tbody td:nth-child(2) {
-	text-align: center;
 	white-space: nowrap;
 }
 
