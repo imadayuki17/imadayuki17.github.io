@@ -212,6 +212,15 @@ a {
 	border-left: 3px solid #B5C98E;
 }
 
+.sub-content code {
+	display: inline-block;
+	padding: 4px 8px;
+	background-color: #F0F6FA;
+	color: #29485B;
+	border-radius: 4px;
+	font-size: 0.9em;
+}
+
 .gallery {
 	display: flex;
 	gap: 10px;
