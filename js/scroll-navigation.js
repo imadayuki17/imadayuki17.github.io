@@ -79,6 +79,63 @@ document.querySelectorAll('.navi a').forEach(link => {
 	});
 });
 
+/* スクロール位置に合わせてナビゲーションを強調 */
+const sections = centerColumn.querySelectorAll('.content-section');
+const navLinks = document.querySelectorAll('.navi a');
+
+function updateActiveNavigation() {
+	const scrollTop = centerColumn.scrollTop;
+	const scrollBottom =
+		scrollTop + centerColumn.clientHeight;
+
+	// 一番下までスクロールしたら、最後のセクションを選択
+	let activeId = '';
+
+	if (scrollTop < 10) {
+		activeId = 'home';
+	} else if (
+		scrollBottom >= centerColumn.scrollHeight - 2
+	) {
+		activeId = sections[sections.length - 1]?.id;
+	} else {
+		// 中央カラムの上端から少し下を判定基準にする
+		const checkPosition = 100;
+
+		sections.forEach(section => {
+			const sectionTop =
+				section.getBoundingClientRect().top -
+				centerColumn.getBoundingClientRect().top;
+
+			if (sectionTop <= checkPosition) {
+				activeId = section.id;
+			}
+		});
+	}
+
+	navLinks.forEach(link => {
+		const isActive =
+			link.getAttribute('href') === `#${activeId}`;
+
+		link.classList.toggle('active', isActive);
+
+		if (isActive) {
+			link.setAttribute('aria-current', 'location');
+		} else {
+			link.removeAttribute('aria-current');
+		}
+	});
+}
+
+// 中央カラムのスクロールに合わせて更新
+centerColumn.addEventListener(
+	'scroll',
+	updateActiveNavigation
+);
+
+// ページを開いたときにも現在位置を反映
+updateActiveNavigation();
+
+// スクロールして画面に入ったら蛍光ペンを表示
 const highlightText = document.querySelector('.highlight-on-scroll');
 
 if (highlightText && centerColumn) {
