@@ -4,6 +4,7 @@
 
 html {
 	scroll-behavior: smooth;
+}
 
 html,
 body {
@@ -55,6 +56,53 @@ hr {
 	background-image: url(./img/background.jpg);
 	background-size: cover;
 }
+
+/* ===== ページアクセス時の順番フェードイン ここから ===== */
+
+/* 左・中央・右カラムの初期状態 */
+.left-column,
+.center-column,
+.right-column {
+	opacity: 0;
+}
+
+/* 左カラム：最初に表示 */
+.left-column {
+	animation: columnFadeIn 1.8s ease-out 0s forwards;
+}
+
+/* 中央カラム：左の次に表示 */
+.center-column {
+	animation: columnFadeIn 0.8s ease-out 0.3s forwards;
+}
+
+/* 右カラム：最後に表示 */
+.right-column {
+	animation: columnFadeIn 1.2s ease-out 0.6s forwards;
+}
+
+/* フェードインの動き */
+@keyframes columnFadeIn {
+from {
+		opacity: 0;
+	}
+
+to {
+		opacity: 1;
+	}
+}
+
+/* 動きを減らす設定をしている場合 */
+@media (prefers-reduced-motion: reduce) {
+.left-column,
+.center-column,
+.right-column {
+		opacity: 1;
+		animation: none;
+	}
+}
+
+/* ===== ページアクセス時の順番フェードイン ここまで ===== */
 
 /* ==========================
    左カラム
@@ -352,7 +400,6 @@ hr {
 .skill-note tbody tr:hover {
 	background-color: #f1f5eb;
 }
-
 /* ===== スキル一覧テーブル ここまで ===== */
 
 /* スクロール時に蛍光ペンを引く文章 */
@@ -365,7 +412,7 @@ hr {
 	background-size: 0% 100%;
 	-webkit-box-decoration-break: clone;
 	box-decoration-break: clone;
-	transition: background-size 2s ease;
+	transition: background-size 1.5s ease;
 }
 
 /* 文章が画面内に入ったとき */
@@ -435,6 +482,21 @@ hr {
 .file-structure,
 .file-structure * {
 	font-size: 13px !important;
+}
+
+/* ===== スクロール時のコンテンツフェードイン ここから ===== */
+
+/* フェードイン初期状態：非表示（透明 + わずかに下にずれた位置） */
+.scroll-fade {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* 表示状態：クラス付与で発動 */
+.scroll-fade.is-visible {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 /* ==========================

@@ -5,6 +5,7 @@
 		<meta name="robots" content="noindex">
 		<link rel="stylesheet" href="./style.css">
 		<script src="./js/scroll-navigation.js" defer></script>
+		<script src="./js/scroll-fade.js" defer></script>
 		<script src="./js/gallery.js" defer></script>
 		<title>So, This is Me! The profile of Yuki Imada</title>
 	</head>
@@ -36,7 +37,7 @@
 			<!-- 中央カラム：縦スクロール -->
 			<div class="center-column">
 				<div id="home"></div>
-				<div class="content-section" id="aboutme">
+				<div class="content-section scroll-fade" id="aboutme">
 					<div class="section-label">01 / ABOUT ME</div>
 					<h2 class="section-title">
 						<span>私について</span>
@@ -61,7 +62,7 @@
 						<p>好奇心は強め。何か気になることがあると、「なんでだろう？」から始まり、あれこれ調べたり考えたり。ひとつの疑問から別の疑問が生まれて、気づけば寄り道していることもあります。</p>
 					</div>
 				</div>
-				<div class="content-section" id="favorites">
+				<div class="content-section scroll-fade" id="favorites">
 					<div class="section-label">02 / FAVORITES</div>
 					<h2 class="section-title">
 						<span>好きなもの</span>
@@ -121,7 +122,7 @@
 						<p>猫が好きです。そして、地図を見るのも好きです。地図を眺めていると、「このあたりには何があるんだろう？」と、つい気になってしまいます。調べ始めると、目的地とは関係のない場所まで詳しくなっていることも。</p>
 					</div>
 				</div>
-				<div class="content-section" id="cats">
+				<div class="content-section scroll-fade" id="cats">
 					<div class="section-label">03 / CATS</div>
 					<h2 class="section-title">
 						<span>猫のお話</span>
@@ -164,18 +165,16 @@
 									<img src="./img/sabineko/004.jpg" alt="さび猫4">
 								</div>
 							</div>
-							
-							<!-- 画像の拡大表示用 ここから -->
+							<!-- さび猫ギャラリー画像の拡大表示用 ここから -->
 							<div class="lightbox" id="lightbox">
 								<button class="lightbox-close" id="lightboxClose" aria-label="閉じる">&times;</button>
 								<img id="lightboxImage" src="" alt="">
 							</div>
-							<!-- 画像の拡大表示用 ここまで -->
-
+							<!-- さび猫ギャラリー画像の拡大表示用 ここまで -->
 						</div>
 					</div>
 				</div>
-				<div class="content-section" id="skills">
+				<div class="content-section scroll-fade" id="skills">
 					<div class="section-label">04 / SKILLS</div>
 					<h2 class="section-title">
 						<span>できること</span>
@@ -269,7 +268,7 @@
 						<p>そんな思いから、今回の職業訓練に応募しました。制作側の知識を学び、社内外のクリエイターと同じ目線で話せるマーケターを目指しています。</p>
 					</div>
 				</div>
-				<div class="content-section" id="mycareer">
+				<div class="content-section scroll-fade" id="mycareer">
 					<div class="section-label">05 / MY CAREER JOURNEY</div>
 					<h2 class="section-title">
 						<span>仕事の遍歴</span>
@@ -296,7 +295,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="content-section" id="goal">
+				<div class="content-section scroll-fade" id="goal">
 					<div class="section-label">06 / GOAL</div>
 					<h2 class="section-title">
 						<span>これからの目標</span>
@@ -322,7 +321,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="content-section" id="development">
+				<div class="content-section scroll-fade" id="development">
 					<div class="section-label">07 / DEVELOPMENT NOTES</div>
 					<h2 class="section-title">
 						<span>制作ノート</span>
@@ -365,6 +364,7 @@
 											<li><span class="folder">📁 js</span>
 												<ul>
 													<li><a href="./js/gallery.js" target="_blank" rel="noopener noreferrer">gallery.js</a></li>
+													<li><a href="./js/scroll-fade.js" target="_blank" rel="noopener noreferrer">scroll-fade.js</a></li>
 													<li><a href="./js/scroll-navigation.js" target="_blank" rel="noopener noreferrer">scroll-navigation.js</a></li>
 												</ul>
 											</li>
@@ -381,8 +381,6 @@
 								<li><a href="https://muuuuu.org/" target="_blank" rel="noopener noreferrer">Webデザイン集・参考サイト・アワード</a></li>
 								<li><a href="https://choooodoii.com/" target="_blank" rel="noopener noreferrer">ちょうどいいWebデザインギャラリー</a></li>
 							</ul>
-							<h4>どこで操作しても、中央カラムをスクロール。</h4>
-							<p>マウスホイールを操作する場所にかかわらず、中央カラムのコンテンツがスクロールするようにしました。CSSだけでは実現できなかったため、ネット上で公開されているJavaScriptのコードをコピペして実装しています。</p>
 							<h4>テキストは、ChatGPTと一緒にブラッシュアップ。</h4>
 							<p>掲載する文章は、まず伝えたい内容をラフに書き出し、ChatGPTに入力して文章の構成や表現をブラッシュアップしました。</p>
 						</div>
@@ -403,12 +401,8 @@
 							<p>スクロールバーを非表示にしています。CSSだけで実現できる方法を調べ、ネット上で公開されているコードを参考にして実装しました。</p>
 							<h4>Googleマップは、iframeで埋め込み。</h4>
 							<p>出身地の地図は、Googleマップの埋め込み機能を利用しています。表示したい場所を地図上で開き、ハンバーガーメニュー内の「地図を共有または埋め込む」から埋め込み用のHTMLコードを取得できます。</p>
-							<h4>さび猫ギャラリーは、JavaScriptで実装。</h4>
-							<p>さび猫ギャラリーは、JavaScriptを使って画像の切り替えや拡大表示を制御しています。この機能も、ネット上で公開されているコードを参考にして実装しました。</p>
 							<h4>スキルの自己評価表は、tableタグで。</h4>
 							<p><code>table</code>タグを使って表にまとめました。表は行や列の幅、余白、罫線、背景色など、調整する項目が多く、ChatGPTにコードを確認してもらいながら作りました。</p>
-							<h4>スクロールに合わせた蛍光ペンの演出</h4>
-							<p>CSSで蛍光ペンの色やアニメーションを設定し、JavaScriptで対象の文章が画面内に入ったことを検知して、少し待ってから色が伸びるようにしました。ChatGPTに相談しながら、アニメーションの開始タイミングや速度を調整し、強調したい文章に自然と目が向くように工夫しました。</p>
 						</div>
 						<h3>右カラム</h3>
 						<div class="sub-content">
@@ -418,8 +412,19 @@
 							<p>「The profile of Yuki Imada」は、文字と文字の間隔を少し広げ、ゆったりとした印象になるように調整しました。CSSの<code>letter-spacing</code>を使い、文字間隔を<code>0.04em</code>に設定しています。</p>
 							<h4>マウスを重ねると、ピンクの下線が登場。</h4>
 							<p>ナビゲーションのリンクは、マウスカーソルを重ねるとピンク色の下線が表示されるようにしました。CSSを利用し、操作できる場所が視覚的に分かるようにしています。</p>
-							<h4>ナビゲーションの現在位置を丸で表示。</h4>
-							<p>現在表示しているセクションが分かりやすくなるように、ナビゲーションの左側にピンクの丸を表示させました。CSSとJavaScriptで実現しています。ここでもChatGPTのお世話になりました。</p>
+						</div>
+						<h3>JavaScriptの使用箇所</h3>
+						<div class="sub-content">
+							<h4>JavaScriptで実装した動き</h4>
+							<p>ページには、JavaScriptを使って6つの動きを実装しました。インターネット上で公開されているソースコードを参考に、コピーして利用したり、ChatGPTに確認しながら調整したりしています。フェードインや線のアニメーションなど、見た目の装飾には主にCSSを使用しています。</p>
+							<ul>
+								<li>ページアクセス時の順番フェードイン</li>
+								<li>中央カラムのスクロールに合わせたコンテンツのフェードイン</li>
+								<li>ページ内のどこでマウスホイールを回しても中央カラムをスクロール</li>
+								<li>さび猫ギャラリーの画像拡大表示</li>
+								<li>「これからの目標」の最下段テキストにオレンジ色のラインを表示</li>
+								<li>表示中のコンテンツと連動したナビゲーション左側のピンク色の丸</li>
+							</ul>
 						</div>
 					</div>
 				</div>
