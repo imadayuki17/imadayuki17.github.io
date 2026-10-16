@@ -486,6 +486,72 @@ to {
 	font-size: 13px !important;
 }
 
+/* キャリアのタイムライン */
+.career-timeline {
+	margin-top: 14px;
+	padding-left: 18px;
+}
+
+/* 1つのキャリア項目 */
+.career-item {
+	position: relative;
+	padding-left: 26px;
+	padding-bottom: 28px;
+}
+
+/* 縦線：次の丸まで伸ばす */
+.career-item::before {
+	content: "";
+	position: absolute;
+	top: 15px;
+	bottom: -8px;
+	left: 5px;
+	width: 1px;
+	background-color: #DADDD6;
+	z-index: 0;
+}
+
+/* 丸 */
+.career-item::after {
+	content: "";
+	position: absolute;
+	top: 8px;
+	left: 0;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background-color: #BFC4BA;
+	z-index: 1;
+}
+
+/* 最後の項目は縦線を表示しない */
+.career-item:last-child::before {
+	display: none;
+}
+
+/* 見出し */
+.career-content h4 {
+	margin: 0 0 12px;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1.7;
+}
+
+/* 説明文 */
+.career-content p {
+	margin: 0 0 12px;
+}
+
+/* 各項目の最後の段落 */
+.career-content p:last-child {
+	margin-bottom: 0;
+}
+
+/* 現在の項目の丸を少しだけ濃くする */
+.career-current::after {
+	background-color: #92998A;
+}
+
 /* ===== スクロール時のコンテンツフェードイン ここから ===== */
 
 /* フェードイン初期状態：非表示（透明 + わずかに下にずれた位置） */
