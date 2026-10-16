@@ -283,6 +283,10 @@ to {
 	cursor: pointer;
 }
 
+
+
+
+
 /* 画像の拡大表示用 */
 .lightbox {
 	display: flex;
@@ -299,6 +303,10 @@ to {
 	opacity: 0;
 	transition: opacity 0.35s ease, background 0.35s ease;
 }
+
+
+
+
 
 /* 表示するとき */
 .lightbox.active {
