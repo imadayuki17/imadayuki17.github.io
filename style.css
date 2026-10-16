@@ -30,11 +30,6 @@ hr {
 	background-color: #DDDDDD;
 }
 
-a {
-	text-decoration: none;
-	cursor: pointer;
-}
-
 .bold {
 	font-weight: bold;
 }
@@ -129,6 +124,12 @@ a {
 	/* スクロールバーを非表示にする */
 	scrollbar-width: none; /* Firefox */
 	padding: 20px;
+	line-height: 1.6;
+}
+
+.center-column a {
+	cursor: pointer;
+	color: inherit; 
 }
 
 :target {
@@ -206,8 +207,7 @@ a {
 .sub-content h4 {
 	font-size: 15px;
 	font-weight: 700;
-	line-height: 1.6;
-	margin: 20px 0 6px 0;
+	margin: 26px 0 10px 0;
 	padding-left: 10px;
 	border-left: 3px solid #B5C98E;
 }
@@ -291,11 +291,7 @@ a {
 	cursor: pointer;
 }
 
-.skill-note {
-	
-}
-
-/* ===== スキル一覧テーブル ===== */
+/* ===== スキル一覧テーブル ここから ===== */
 .skill-note {
 	font-size: 14px;
 	width: 100%;
@@ -359,6 +355,25 @@ a {
 	background-color: #f1f5eb;
 }
 
+/* ===== スキル一覧テーブル ここまで ===== */
+
+/* スクロール時に蛍光ペンを引く文章 */
+.highlight-on-scroll span {
+	background-image: linear-gradient(
+		transparent 72%,
+		#F0C99B 72%
+	);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+	transition: background-size 2s ease;
+}
+
+/* 文章が画面内に入ったとき */
+.highlight-on-scroll.active span {
+	background-size: 100% 100%;
+}
 
 /* ==========================
    右カラム
@@ -409,6 +424,8 @@ a {
 }
 
 .navi a {
+	text-decoration: none;
+	cursor: pointer;
 	color: inherit; 
 }
 

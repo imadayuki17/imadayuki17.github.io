@@ -78,3 +78,27 @@ document.querySelectorAll('.navi a').forEach(link => {
 		history.replaceState(null, '', link.getAttribute('href'));
 	});
 });
+
+const highlightText = document.querySelector('.highlight-on-scroll');
+
+if (highlightText && centerColumn) {
+	const highlightObserver = new IntersectionObserver(
+		entries => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setTimeout(() => {
+						highlightText.classList.add('active');
+					}, 700);
+
+					highlightObserver.unobserve(highlightText);
+				}
+			});
+		},
+		{
+			root: centerColumn,
+			threshold: 0.1
+		}
+	);
+
+	highlightObserver.observe(highlightText);
+}
