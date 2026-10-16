@@ -267,6 +267,13 @@ to {
 	font-size: 0.9em;
 }
 
+.center-column iframe {
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	display: block;
+}
+
 .gallery {
 	display: flex;
 	gap: 10px;
@@ -282,10 +289,6 @@ to {
 	height: auto;
 	cursor: pointer;
 }
-
-
-
-
 
 /* 画像の拡大表示用 */
 .lightbox {
@@ -303,10 +306,6 @@ to {
 	opacity: 0;
 	transition: opacity 0.35s ease, background 0.35s ease;
 }
-
-
-
-
 
 /* 表示するとき */
 .lightbox.active {
@@ -388,11 +387,6 @@ to {
 }
 
 /* 2列目：自己評価 */
-.skill-note thead th:nth-child(2),
-.skill-note tbody td:nth-child(2) {
-	white-space: nowrap;
-}
-
 .skill-note tbody td:nth-child(2) {
 	color: #c18b3c;
 	letter-spacing: 2px;
