@@ -79,7 +79,7 @@ document.querySelectorAll('.navi a').forEach(link => {
 	});
 });
 
-/* スクロール位置に合わせてナビゲーションを強調 */
+// スクロール位置に合わせてナビゲーションを強調
 const sections = centerColumn.querySelectorAll('.content-section');
 const navLinks = document.querySelectorAll('.navi a');
 
