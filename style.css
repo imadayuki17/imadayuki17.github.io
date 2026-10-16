@@ -416,7 +416,7 @@ hr {
 .navi ul {
 	list-style: none;
 	padding-left: 0;
-	margin: 0 0 0 24px;
+	margin: 0 0 0 30px;
 	line-height: 38px;
 	font-size: 16px;
 }
@@ -427,7 +427,7 @@ hr {
 	color: inherit; 
 }
 
-/* ホバー時にアンダーライン ここから */
+/* ホバー時にアンダーライン */
 .navi a {
 	position: relative;
 	display: inline-block;
@@ -448,4 +448,21 @@ hr {
 	width: 100%;
 	left: 0;
 }
-/* ホバー時にアンダーライン ここまで */
+
+/* 現在表示しているセクション */
+.navi a.active {
+	color: #B56B68;
+}
+
+/* 左側にピンクの丸を表示 */
+.navi a.active::before {
+	content: "";
+	position: absolute;
+	left: -14px;
+	top: calc(50% + 1px);
+	transform: translateY(-50%);
+	width: 6px;
+	height: 6px;
+	background-color: #B56B68;
+	border-radius: 50%;
+}
