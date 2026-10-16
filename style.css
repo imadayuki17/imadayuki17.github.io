@@ -52,7 +52,7 @@ hr {
 
 	width: 100%;
 	height: 100vh; /* ビューポートの高さ100% */
-	background-image: url(./img/white_00101.jpg);
+	background-image: url(./img/background.jpg);
 	background-size: cover;
 }
 
@@ -371,6 +371,70 @@ hr {
 /* 文章が画面内に入ったとき */
 .highlight-on-scroll.active span {
 	background-size: 100% 100%;
+}
+
+/* ファイル構成図 */
+.file-structure {
+	margin-top: 20px;
+	padding: 20px;
+	background-color: #f8f7f4;
+	border-radius: 10px;
+	overflow-x: auto;
+}
+
+.file-tree,
+.file-tree ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 22px;
+}
+
+.file-tree {
+	padding-left: 0;
+	font-family: monospace;
+	line-height: 1.7;
+	color: #555555;
+}
+
+.file-tree ul {
+	margin-left: 8px;
+	border-left: 1px solid #d8d2ca;
+}
+
+.file-tree li {
+	position: relative;
+	padding-left: 18px;
+}
+
+.file-tree li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.95em;
+	width: 12px;
+	border-top: 1px solid #d8d2ca;
+}
+
+.file-tree > li::before {
+	display: none;
+}
+
+.file-tree .folder {
+	color: #9a8065;
+	font-weight: bold;
+}
+
+.file-tree .html-file {
+	color: #b78352;
+}
+
+.file-tree .css-file {
+	color: #668ca8;
+}
+
+.file-structure,
+.file-structure * {
+	font-size: 13px !important;
 }
 
 /* ==========================
