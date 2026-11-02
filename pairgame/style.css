@@ -1,0 +1,265 @@
+
+/* =========================
+   共通
+========================= */
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+
+	background-image: url("./img/background.jpg");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	position: relative;
+	isolation: isolate;
+}
+
+/* 背景画像を薄くするための半透明シート */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 12, 28, 0.45);
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+
+div {
+	box-sizing: border-box;
+}
+
+/* =========================
+   ゲーム全体
+========================= */
+
+#game-wrapper {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-top: 15px;
+	transform: none;
+}
+
+/* =========================
+   ゲームタイトル
+========================= */
+
+#game-title {
+	text-align: center;
+	font-size: 32px;
+	letter-spacing: 8px;
+	margin: 0 0 20px;
+	color: #35DFFF;
+	text-shadow:
+		0 0 5px #35DFFF,
+		0 0 15px #009DCE,
+		0 0 30px #006A99;
+}
+
+/* =========================
+   ゲーム本体
+========================= */
+
+#container {
+	display: grid;
+	grid-template-columns: 50px 478px;
+	gap: 40px;
+	justify-content: center;
+	align-items: start;
+}
+
+/* =========================
+   左カラム
+========================= */
+
+#left-column {
+	width: 50px;
+	font-size: 30px;
+	text-align: center;
+}
+
+#life-gauge-container {
+	width: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 4px;
+	border: 1px solid #168DB0;
+	background-color: #0B2038;
+	box-shadow: 0 0 12px #087FA0;
+}
+
+.life-gauge {
+	width: 40px;
+	height: 27px;
+	background-color: #35DFFF;
+	box-shadow: 0 0 8px #009DCE;
+}
+
+/* 残り10個以下：黄色 */
+.life-gauge.yellow {
+	background-color: #FFD54F;
+	box-shadow: 0 0 8px #FFD54F;
+}
+
+/* 残り5個以下：赤色 */
+.life-gauge.red {
+	background-color: #FF5252;
+	box-shadow: 0 0 8px #FF5252;
+}
+
+#full {
+	margin-top: 10px;
+}
+
+#full button {
+	width: 50px;
+	height: 40px;
+	padding: 0;
+	color: #35DFFF;
+	background-color: #102C48;
+	border: 1px solid #35DFFF;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+/* =========================
+   右カラム
+========================= */
+
+#right-column {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 10px;
+}
+
+/* =========================
+   64個のボックス
+========================= */
+
+#box-container {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(8, 50px);
+	grid-template-rows: repeat(8, 50px);
+	gap: 8px;
+	padding: 10px;
+	background-color: #0B2038;
+	border: 1px solid #168DB0;
+	box-shadow: 0 0 8px #087FA0;
+}
+
+.box {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #8CEEFF;
+	background-color: #102B49;
+	border: 1px solid #168DB0;
+	font-size: 18px;
+	font-weight: bold;
+	box-shadow: inset 0 0 8px #0A4260;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.box:hover {
+	color: #FFFFFF;
+	background-color: #145578;
+	border-color: #35DFFF;
+	box-shadow: 0 0 8px #35DFFF;
+}
+
+.box.selected {
+	color: #071426;
+	background-color: #FFB454;
+	border-color: #FFB454;
+	box-shadow: 0 0 12px #FFB454;
+}
+
+/* =========================
+   ゲーム操作エリア
+========================= */
+
+#game-control {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	width: 100%;
+	padding: 8px;
+	background-color: #0B2038;
+	border: 1px solid #168DB0;
+	box-shadow: 0 0 10px #087FA0;
+}
+
+#start button {
+	padding: 7px 16px;
+	color: #071426;
+	background-color: #FFB454;
+	border: 1px solid #FFB454;
+	font-weight: bold;
+	letter-spacing: 2px;
+	cursor: pointer;
+	box-shadow: 0 0 10px #D98228;
+}
+
+#timer {
+	padding: 5px 10px;
+	min-width: 75px;
+	text-align: center;
+	color: #35DFFF;
+	background-color: #061321;
+	border: 1px solid #168DB0;
+	font-family: monospace;
+	font-size: 18px;
+}
+
+#message {
+	color: #FFB454;
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-shadow: 0 0 8px #FFB454;
+}
+
+/* =========================
+   ゲーム終了時の表示
+========================= */
+
+#game-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(7, 20, 38, 0.85);
+    color: #FFB454;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px #FFB454;
+
+    z-index: 10;
+}
