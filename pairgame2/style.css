@@ -151,14 +151,14 @@ div {
 }
 
 #full button {
-    width: 50px;
-    height: 40px;
-    padding: 0;
+	width: 50px;
+	height: 40px;
+	padding: 0;
 
-    font-family: "Cinzel", serif;
-    font-size: 12px;
-    font-weight: 600;
-    color: #F5D98B;
+	font-family: "Cinzel", serif;
+	font-size: 12px;
+	font-weight: 600;
+	color: #F5D98B;
 
 	background: linear-gradient(
 		to bottom,
@@ -307,13 +307,13 @@ div {
 }
 
 #start button:hover {
-    color: #352313;
+	color: #352313;
 
-    background: linear-gradient(
-        to bottom,
-        #FFF0B5,
-        #D5A64E
-    );
+	background: linear-gradient(
+		to bottom,
+		#FFF0B5,
+		#D5A64E
+	);
 }
 
 /* タイマー */
@@ -343,29 +343,29 @@ div {
 ========================= */
 
 #game-result {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 
-    display: none;
-    justify-content: center;
-    align-items: center;
+	display: none;
+	justify-content: center;
+	align-items: center;
 
-    background-color: rgba(15, 11, 7, 0.9);
+	background-color: rgba(15, 11, 7, 0.9);
 
-    color: #E5CC91;
-    font-family: "Cinzel", serif;
-    font-size: 42px;
-    font-weight: 700;
-    letter-spacing: 4px;
+	color: #E5CC91;
+	font-family: "Cinzel", serif;
+	font-size: 42px;
+	font-weight: 700;
+	letter-spacing: 4px;
 
-    text-shadow:
-        2px 2px 3px #000000,
-        0 0 15px rgba(213, 166, 78, 0.6);
+	text-shadow:
+		2px 2px 3px #000000,
+		0 0 15px rgba(213, 166, 78, 0.6);
 
-    border: 4px double #C5A45D;
+	border: 4px double #C5A45D;
 
-    z-index: 10;
+	z-index: 10;
 }
