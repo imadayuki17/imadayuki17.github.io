@@ -1,0 +1,329 @@
+
+/* =========================
+   共通
+========================= */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    background-image: url("./img/background.png");
+    background-size: auto;
+    background-position: left top;
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: #66534F;
+
+    position: relative;
+    isolation: isolate;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+/* =========================
+   ゲーム全体
+========================= */
+
+#game-wrapper {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* =========================
+   ゲームタイトル
+========================= */
+
+#game-title {
+    text-align: center;
+    font-family: "Fredoka", sans-serif;
+    font-size: 36px;
+    letter-spacing: 6px;
+    margin: 15px 0 15px;
+
+    color: #FF7895;
+
+    text-shadow:
+        2px 2px 0 #FFFFFF,
+        0 0 8px #FFB6C8;
+}
+
+/* =========================
+   ゲーム本体
+========================= */
+
+#container {
+    display: grid;
+    grid-template-columns: 50px 452px;
+    gap: 30px;
+
+    justify-content: center;
+    align-items: start;
+}
+
+/* =========================
+   左カラム
+========================= */
+
+#left-column {
+    width: 50px;
+    text-align: center;
+}
+
+#life-gauge-container {
+    width: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    padding: 4px;
+
+    border: 2px solid #FFB6C8;
+    border-radius: 12px;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 3px 8px rgba(180, 120, 120, 0.2);
+}
+
+.life-gauge {
+    width: 39px;
+    height: 27px;
+
+    background-color: #79DDE8;
+    border-radius: 6px;
+
+    box-shadow: 0 1px 4px rgba(50, 170, 190, 0.3);
+}
+
+.life-gauge.yellow {
+    background-color: #FFD36E;
+    box-shadow: 0 1px 4px #FFD36E;
+}
+
+.life-gauge.red {
+    background-color: #FF8C9F;
+    box-shadow: 0 1px 4px #FF8C9F;
+}
+
+/* FULLボタン */
+
+#full {
+    margin-top: 10px;
+}
+
+#full button {
+    width: 50px;
+    height: 40px;
+    padding: 0;
+
+    color: #FFFFFF;
+    background-color: #B98B6A;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+    font-family: "Fredoka", sans-serif;
+    font-weight: bold;
+
+    box-shadow: 0 3px 5px rgba(100, 70, 50, 0.2);
+}
+
+#full button:hover {
+    background-color: #D2A17D;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   右カラム
+========================= */
+
+#right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+/* =========================
+   64枚の猫画像
+========================= */
+
+#box-container {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+
+    gap: 4px;
+    padding: 10px;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+    border: none;
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    background: transparent;
+    cursor: pointer;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.box img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    border: none;
+    border-radius: 7px;
+}
+
+/* マウスを乗せたとき */
+
+.box:hover {
+    transform: scale(1.08);
+    box-shadow: 0 3px 10px rgba(255, 120, 149, 0.6);
+    z-index: 2;
+}
+
+/* 選択中の画像 */
+
+.box.selected {
+    outline: 3px solid #FF7895;
+    outline-offset: -3px;
+
+    box-shadow: 0 0 10px #FF7895;
+    z-index: 1;
+}
+
+/* =========================
+   ゲーム操作エリア
+========================= */
+
+#game-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 100%;
+    padding: 10px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    border: 2px solid #FFC2CE;
+    border-radius: 15px;
+
+    box-shadow: 0 3px 10px rgba(180, 120, 120, 0.2);
+}
+
+/* STARTボタン */
+
+#start button {
+    padding: 8px 18px;
+
+    color: #FFFFFF;
+    background-color: #FF9D5C;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 5px rgba(200, 120, 60, 0.3);
+}
+
+#start button:hover {
+    background-color: #FFB47E;
+    transform: translateY(-2px);
+}
+
+/* タイマー */
+
+#timer {
+    padding: 5px 10px;
+    min-width: 75px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+    background-color: #75C9D4;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 18px;
+}
+
+/* メッセージ */
+
+#message {
+    color: #E98B9F;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   ゲーム終了時の表示
+========================= */
+
+#game-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 245, 225, 0.9);
+
+    color: #FF7895;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 4px;
+
+    text-shadow:
+        2px 2px 0 #FFFFFF,
+        0 0 10px #FFB6C8;
+
+    border-radius: 10px;
+
+    z-index: 10;
+}
