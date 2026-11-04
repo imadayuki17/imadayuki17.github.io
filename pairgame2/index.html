@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">		<title>JavaScript Practice</title>
+	</head>
+	<body>
+	<div id="game-wrapper">
+		<h1 id="game-title">PAIR GAME</h1>
+			<div id="container">
+				<div id="left-column">
+					<div id="life-gauge-container">
+						<div id="life-gauge1" class="life-gauge"></div>
+						<div id="life-gauge2" class="life-gauge"></div>
+						<div id="life-gauge3" class="life-gauge"></div>
+						<div id="life-gauge4" class="life-gauge"></div>
+						<div id="life-gauge5" class="life-gauge"></div>
+						<div id="life-gauge6" class="life-gauge"></div>
+						<div id="life-gauge7" class="life-gauge"></div>
+						<div id="life-gauge8" class="life-gauge"></div>
+						<div id="life-gauge9" class="life-gauge"></div>
+						<div id="life-gauge10" class="life-gauge"></div>
+						<div id="life-gauge11" class="life-gauge"></div>
+						<div id="life-gauge12" class="life-gauge"></div>
+						<div id="life-gauge13" class="life-gauge"></div>
+						<div id="life-gauge14" class="life-gauge"></div>
+						<div id="life-gauge15" class="life-gauge"></div>
+					</div>
+					<div id="full">
+						<button onclick="fullLife();">FULL</button>
+					</div>
+				</div>
+				<div id="right-column">
+					<div id="box-container">
+						<!-- 1段目 -->
+						<div id="box1" class="box" onclick="selectNumber(this);">1</div>
+						<div id="box2" class="box" onclick="selectNumber(this);">1</div>
+						<div id="box3" class="box" onclick="selectNumber(this);">2</div>
+						<div id="box4" class="box" onclick="selectNumber(this);">2</div>
+						<div id="box5" class="box" onclick="selectNumber(this);">3</div>
+						<div id="box6" class="box" onclick="selectNumber(this);">3</div>
+						<div id="box7" class="box" onclick="selectNumber(this);">4</div>
+						<div id="box8" class="box" onclick="selectNumber(this);">4</div>
+
+						<!-- 2段目 -->
+						<div id="box9" class="box" onclick="selectNumber(this);">5</div>
+						<div id="box10" class="box" onclick="selectNumber(this);">5</div>
+						<div id="box11" class="box" onclick="selectNumber(this);">6</div>
+						<div id="box12" class="box" onclick="selectNumber(this);">6</div>
+						<div id="box13" class="box" onclick="selectNumber(this);">7</div>
+						<div id="box14" class="box" onclick="selectNumber(this);">7</div>
+						<div id="box15" class="box" onclick="selectNumber(this);">8</div>
+						<div id="box16" class="box" onclick="selectNumber(this);">8</div>
+
+						<!-- 3段目 -->
+						<div id="box17" class="box" onclick="selectNumber(this);">9</div>
+						<div id="box18" class="box" onclick="selectNumber(this);">9</div>
+						<div id="box19" class="box" onclick="selectNumber(this);">10</div>
+						<div id="box20" class="box" onclick="selectNumber(this);">10</div>
+						<div id="box21" class="box" onclick="selectNumber(this);">11</div>
+						<div id="box22" class="box" onclick="selectNumber(this);">11</div>
+						<div id="box23" class="box" onclick="selectNumber(this);">12</div>
+						<div id="box24" class="box" onclick="selectNumber(this);">12</div>
+
+						<!-- 4段目 -->
+						<div id="box25" class="box" onclick="selectNumber(this);">13</div>
+						<div id="box26" class="box" onclick="selectNumber(this);">13</div>
+						<div id="box27" class="box" onclick="selectNumber(this);">14</div>
+						<div id="box28" class="box" onclick="selectNumber(this);">14</div>
+						<div id="box29" class="box" onclick="selectNumber(this);">15</div>
+						<div id="box30" class="box" onclick="selectNumber(this);">15</div>
+						<div id="box31" class="box" onclick="selectNumber(this);">16</div>
+						<div id="box32" class="box" onclick="selectNumber(this);">16</div>
+
+						<!-- 5段目 -->
+						<div id="box33" class="box" onclick="selectNumber(this);">17</div>
+						<div id="box34" class="box" onclick="selectNumber(this);">17</div>
+						<div id="box35" class="box" onclick="selectNumber(this);">18</div>
+						<div id="box36" class="box" onclick="selectNumber(this);">18</div>
+						<div id="box37" class="box" onclick="selectNumber(this);">19</div>
+						<div id="box38" class="box" onclick="selectNumber(this);">19</div>
+						<div id="box39" class="box" onclick="selectNumber(this);">20</div>
+						<div id="box40" class="box" onclick="selectNumber(this);">20</div>
+
+						<!-- 6段目 -->
+						<div id="box41" class="box" onclick="selectNumber(this);">21</div>
+						<div id="box42" class="box" onclick="selectNumber(this);">21</div>
+						<div id="box43" class="box" onclick="selectNumber(this);">22</div>
+						<div id="box44" class="box" onclick="selectNumber(this);">22</div>
+						<div id="box45" class="box" onclick="selectNumber(this);">23</div>
+						<div id="box46" class="box" onclick="selectNumber(this);">23</div>
+						<div id="box47" class="box" onclick="selectNumber(this);">24</div>
+						<div id="box48" class="box" onclick="selectNumber(this);">24</div>
+
+						<!-- 7段目 -->
+						<div id="box49" class="box" onclick="selectNumber(this);">25</div>
+						<div id="box50" class="box" onclick="selectNumber(this);">25</div>
+						<div id="box51" class="box" onclick="selectNumber(this);">26</div>
+						<div id="box52" class="box" onclick="selectNumber(this);">26</div>
+						<div id="box53" class="box" onclick="selectNumber(this);">27</div>
+						<div id="box54" class="box" onclick="selectNumber(this);">27</div>
+						<div id="box55" class="box" onclick="selectNumber(this);">28</div>
+						<div id="box56" class="box" onclick="selectNumber(this);">28</div>
+
+						<!-- 8段目 -->
+						<div id="box57" class="box" onclick="selectNumber(this);">29</div>
+						<div id="box58" class="box" onclick="selectNumber(this);">29</div>
+						<div id="box59" class="box" onclick="selectNumber(this);">30</div>
+						<div id="box60" class="box" onclick="selectNumber(this);">30</div>
+						<div id="box61" class="box" onclick="selectNumber(this);">31</div>
+						<div id="box62" class="box" onclick="selectNumber(this);">31</div>
+						<div id="box63" class="box" onclick="selectNumber(this);">32</div>
+						<div id="box64" class="box" onclick="selectNumber(this);">32</div>
+						
+						<!-- ゲーム終了時のメッセージ -->
+						<div id="game-result"></div>
+					</div>
+					<div id="game-control">
+						<div id="start">
+							<button onclick="shuffle(); gameStart();">START</button>
+						</div>
+						<div id="timer">
+							00:00
+						</div>
+						<div id="message">
+							STAND BY...
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			// 右カラムの数字の配置ここから
+			function shuffle() {
+				var numbers = [];
+
+				// 112233・・・のように64個並べる
+				for (var i = 1; i <= 32; i++) {
+					numbers.push(i);
+					numbers.push(i);
+				}
+
+				// ランダムに2つの数字を抜き出して入れ替える
+				// それを100回繰り返す
+				for (var i = 0; i < 100; i++) {
+					var a = Math.floor(Math.random() * 64);
+					var b = Math.floor(Math.random() * 64);
+
+					var temp = numbers[a];
+					numbers[a] = numbers[b];
+					numbers[b] = temp;
+				}
+
+				// box1からbox64に順番に入れる
+				for (var i = 1; i <= 64; i++) {
+					var box = document.getElementById("box" + i);
+
+					// 数字を入れ替える
+					box.textContent = numbers[i - 1];
+
+					// ボックスを再表示する
+					box.style.visibility = "visible";
+					
+					// 選択状態を解除する
+					box.classList.remove("selected");
+				}
+				
+				// 選択状態をリセット
+				firstBox = null;
+			}
+			// 右カラムの数字の配置ここまで
+
+			// 最初にクリックしたボックスを記憶する変数
+			var firstBox = null;
+
+			// ボックスをクリックしたときの処理
+			function selectNumber(box) {
+
+				// ゲーム開始前、またはゲームオーバーなら何もしない
+				if (!gameStarted || gameOver) {
+					return;
+				}
+
+				// すでに消えたボックスは何もしない
+				if (box.style.visibility === "hidden") {
+					return;
+				}
+
+				// 1回目のクリック
+				if (firstBox === null) {
+					firstBox = box;
+					firstBox.classList.add("selected");
+					return;
+				}
+
+				// 同じボックスを2回クリックした場合
+				if (firstBox === box) {
+					return;
+				}
+
+				// 1回目と2回目の数字を比較
+				if (firstBox.textContent === box.textContent) {
+
+					// 数字が同じなら、2つのボックスを非表示にする
+					firstBox.style.visibility = "hidden";
+					box.style.visibility = "hidden";
+
+					// 残っている数字を確認
+					checkClear();
+
+					} else {
+
+					// 数字が違うなら、選択状態を解除する
+					firstBox.classList.remove("selected");
+				}
+
+				// 選択状態をリセット
+				firstBox = null;
+			}
+
+			// すべての数字が消えたか確認
+			function checkClear() {
+
+				// 表示されているボックスの数
+				var remaining = 0;
+
+				// box1からbox64まで確認
+				for (var i = 1; i <= 64; i++) {
+					var box = document.getElementById("box" + i);
+
+					// 表示されているボックスを数える
+					if (box.style.visibility !== "hidden") {
+						remaining++;
+					}
+				}
+
+				// すべての数字が消えていたら
+				if (remaining === 0) {
+
+					// ゲーム終了
+					gameOver = true;
+
+					// タイマーとライフゲージを停止
+					clearInterval(timerId);
+					clearInterval(lifeGaugeTimer);
+
+					// 下部のメッセージを非表示にする
+					document.getElementById("message").textContent = "";
+
+					// 中央にCLEAR!!を表示
+					document.getElementById("game-result").textContent = "CLEAR!!";
+					document.getElementById("game-result").style.display = "flex";
+				}
+			}
+
+			// タイマーの設定
+			var t = 0
+			var timerId = 0;
+			
+			// ライフゲージの設定
+			var lifeGaugeIndex = 1;
+			var lifeGaugeTimer = null;
+			
+			// ゲームオーバーの設定
+			var gameOver = false;
+			
+			// ゲーム開始状態の設定
+			var gameStarted = false;
+
+			function gameStart() {
+
+				// ゲームオーバーを解除
+				gameOver = false;
+
+				// ゲーム開始状態にする
+				gameStarted = true;
+				
+				// すでに動いているタイマーを停止
+				clearInterval(timerId);
+				clearInterval(lifeGaugeTimer);
+
+				// カウントを0にリセット
+				t = 0;
+
+				// 画面表示も00:00に戻す
+				document.getElementById("timer").textContent = "00:00";
+				
+				// メッセージを表示
+				document.getElementById("message").textContent = "FIGHT!!";
+				document.getElementById("game-result").style.display = "none";
+				
+				// ライフゲージをすべて再表示
+				lifeGaugeIndex = 1;
+				showAllLife();
+
+				// タイマーを開始
+				timerId = setInterval(showTime, 1000);
+				
+				// 1秒ごとにライフゲージを減らす
+				lifeGaugeTimer = setInterval(hideLifeGauge, 1000);
+			}
+
+			// 経過時間の表示
+			function showTime() {
+				t++;
+
+				// 分を計算
+				var minutes = Math.floor(t / 60);
+
+				// 秒を計算
+				var seconds = t % 60;
+
+				// 00:00形式にする
+				var time =
+					String(minutes).padStart(2, "0") + ":" +
+					String(seconds).padStart(2, "0");
+
+				document.getElementById("timer").innerHTML = time;
+			}
+			
+			// ライフゲージを非表示にする
+			function hideLifeGauge() {
+
+				// 対象のライフゲージを取得
+				var gauge = document.getElementById("life-gauge" + lifeGaugeIndex);
+
+				// 非表示にする
+				gauge.style.visibility = "hidden";
+
+				// 次の番号へ
+				lifeGaugeIndex++;
+
+				// 残りのライフゲージ数を計算
+				var remaining = 16 - lifeGaugeIndex;
+
+				// 15個すべて非表示になったら
+				if (lifeGaugeIndex > 15) {
+
+					// ゲームオーバーにする
+					gameOver = true;
+
+					// タイマーを停止
+					clearInterval(timerId);
+					clearInterval(lifeGaugeTimer);
+
+					// 下部のメッセージを非表示にする
+					document.getElementById("message").textContent = "";
+
+					// 中央にGAME OVERを表示
+					document.getElementById("game-result").textContent = "GAME OVER";
+					document.getElementById("game-result").style.display = "flex";
+				}
+			}
+
+			function fullLife() {
+
+				// ゲーム終了後は何もしない
+				if (gameOver) {
+					return;
+				}
+
+				// ゲージをすべて再表示
+				showAllLife();
+
+				// 次は1番目から減らす
+				lifeGaugeIndex = 1;
+
+				// メッセージをFIGHT!!に戻す
+				document.getElementById("message").textContent = "FIGHT!!";
+
+				// 1秒後から再び減らし始める
+				clearInterval(lifeGaugeTimer);
+				lifeGaugeTimer = setInterval(hideLifeGauge, 1000);
+			}
+
+			// すべてのライフゲージを再表示
+			function showAllLife() {
+				for (var i = 1; i <= 15; i++) {
+					var gauge = document.getElementById("life-gauge" + i);
+
+					// ゲージを再表示
+					gauge.style.visibility = "visible";
+
+					// 色を初期状態（水色）に戻す
+					gauge.classList.remove("yellow");
+					gauge.classList.remove("red");
+				}
+			}
+		</script>
+	</body>
+</html>
