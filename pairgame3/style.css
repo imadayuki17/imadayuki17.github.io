@@ -165,16 +165,16 @@ div {
     position: relative;
 
     display: grid;
-    grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
+    grid-template-columns: repeat(8, 53px);
+    grid-template-rows: repeat(8, 53px);
 
     gap: 4px;
-    padding: 10px;
+    padding: 0 0 10px;
 }
 
 .box {
-    width: 50px;
-    height: 50px;
+    width: 53px;
+    height: 53px;
 
     padding: 0;
     border: none;
