@@ -72,7 +72,7 @@ div {
 
 #container {
 	display: grid;
-	grid-template-columns: 50px 478px;
+	grid-template-columns: 50px 462px;
 	gap: 40px;
 	justify-content: center;
 	align-items: start;
@@ -101,7 +101,7 @@ div {
 
 .life-gauge {
 	width: 40px;
-	height: 27px;
+	height: 26px;
 	background-color: #35DFFF;
 	box-shadow: 0 0 8px #009DCE;
 }
@@ -151,8 +151,8 @@ div {
 #box-container {
 	position: relative;
 	display: grid;
-	grid-template-columns: repeat(8, 50px);
-	grid-template-rows: repeat(8, 50px);
+	grid-template-columns: repeat(8, 48px);
+	grid-template-rows: repeat(8, 48px);
 	gap: 8px;
 	padding: 10px;
 	background-color: #0B2038;
@@ -161,8 +161,8 @@ div {
 }
 
 .box {
-	width: 50px;
-	height: 50px;
+	width: 48px;
+	height: 48px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
