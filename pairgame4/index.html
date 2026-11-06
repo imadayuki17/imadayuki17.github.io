@@ -174,8 +174,8 @@
 		function shuffle() {
 			var numbers = [];
 
-			// 猫の画像を32個並べる
-			for (var i = 1; i <= 32; i++) {
+			// 猫の画像を36個並べる
+			for (var i = 1; i <= 36; i++) {
 				numbers.push(i);
 				numbers.push(i);
 			}
@@ -183,8 +183,8 @@
 			// ランダムに2つの画像を抜き出して入れ替える
 			// それを100回繰り返す
 			for (var i = 0; i < 100; i++) {
-				var a = Math.floor(Math.random() * 32);
-				var b = Math.floor(Math.random() * 32);
+				var a = Math.floor(Math.random() * 36);
+				var b = Math.floor(Math.random() * 36);
 
 				var temp = numbers[a];
 				numbers[a] = numbers[b];
